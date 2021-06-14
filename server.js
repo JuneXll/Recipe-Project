@@ -55,4 +55,6 @@ app.get('/add', (req, res) => res.sendFile(path.join(__dirname, 'add.html')));
 // START SERVER
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
 
+const randomVariable = delete();
+
 
