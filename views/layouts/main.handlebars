@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Cookbook</title>
+  <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<body>
+  <header class="">
+    <h1>
+     My Recipe Cookbook
+    </h1>
+    {{#if logged_in}}
+    <nav>
+      <button class="btn" id="logout">Logout</button>
+      <button class="btn" id="add-recipe">Add New Recipe</button>
+    </nav>
+    {{/if}}
+  </header>
+  <main class="recipes">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+
+  {{#if logged_in}}
+  <script src="/public/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
