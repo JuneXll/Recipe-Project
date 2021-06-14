@@ -1,10 +1,4 @@
-{{#each users as |user| }}
-<div class="row">
-  <div class="col">
-    <h2>{{user.name}}</h2>
-  </div>
-  <div class="col">
-    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
-  </div>
-</div>
+<!-- For each recipe, the recipe-details partial is used to render the recipe data -->
+{{#each recipes as |recipe|}}
+{{> recipe-details}}
 {{/each}}
