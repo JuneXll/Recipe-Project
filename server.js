@@ -1,5 +1,12 @@
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+// Initializes Sequelize with session store
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const helpers = require('./utils/helpers');
+const sequelize = require ('./config/connection');
 
 // EXPRESS APP
 const app = express();
@@ -10,8 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //SEQUELIZE
-// Initializes Sequelize with session store
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 // Sets up session and connect to our Sequelize db
 const sess = {
     secret: 'Recipe secret',
@@ -24,6 +30,16 @@ const sess = {
       db: sequelize,
     }),
 };
+
+
+app.use(session(sess));
+
+//For use with helpers
+const hbs = exphbs.create({ helpers });
+
+//standard setup to use handlebars express
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // DATA
 // need API data here
