@@ -10,7 +10,7 @@ const sequelize = require ('./config/connection');
 
 // EXPRESS APP
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // EXPRESS APP - DATA PARSING
 app.use(express.urlencoded({ extended: true }));
