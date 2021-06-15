@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const { User, Recipe} = require('../models');
 
 const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+const recipeData = require('./recipeData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,9 +12,9 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
+  for (const recipe of recipeData) {
+    await Recipe.create({
+      ...recipe,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
@@ -23,3 +23,8 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+
+// Links for recipeData.json
+//   https://damndelicious.net/2019/04/18/mexican-street-tacos/
+//   https://www.foodandwine.com/recipes/easy-ravioli
+//   https://tastesbetterfromscratch.com/paella/
