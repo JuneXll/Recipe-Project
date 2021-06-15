@@ -23,3 +23,8 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+
+// Links for recipeData.json
+//   https://damndelicious.net/2019/04/18/mexican-street-tacos/
+//   https://www.foodandwine.com/recipes/easy-ravioli
+//   https://tastesbetterfromscratch.com/paella/
