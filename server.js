@@ -14,7 +14,7 @@ app.use(express.json());
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // Sets up session and connect to our Sequelize db
 const sess = {
-    secret: 'Super secret secret',
+    secret: 'Recipe secret',
     // Tells our session to use cookies
     cookie: {},
     resave: false,
