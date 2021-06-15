@@ -38,26 +38,26 @@ THEN I will store that recipe.
 *It’s done when at least one new Library, package, or technology is used.
 
 ## APIs
-Nutrition Analysis - https://developer.edamam.com/edamam-nutrition-api
+Nutrition Analysis - https://developer.edamam.com/edamam-nutrition-api  
 Food Recipe - https://rapidapi.com/mycookbook/api/mycookbook-io1/details
 
 
 ## TASKS
-Node.js and Express.js to create a RESTful API
-	-Fernando? Or Chris?
-Handlebars.js
-	-June
-MySQL and Sequelize ORM
-	-June
-GET and POST routes for retrieving and adding new data
-	-Rob
-At least one new Library, package, or technology 
-	-We can tackle this once the project is completed with CSS
-MVC paradigm folder structure
-	-Fernando? Or Chris?
-Authentication(express-session and cookies)
-	-Fernando? Or Chris?
-Protect API keys and sensitive information(.env)
+Node.js and Express.js to create a RESTful API  
+	-Fernando? Or Chris?  
+Handlebars.js  
+	-June  
+MySQL and Sequelize ORM  
+	-June  
+GET and POST routes for retrieving and adding new data  
+	-Rob  
+At least one new Library, package, or technology  
+	-We can tackle this once the project is completed with CSS  
+MVC paradigm folder structure  
+	-Fernando? Or Chris?  
+Authentication(express-session and cookies)  
+	-Fernando? Or Chris?  
+Protect API keys and sensitive information(.env)  
 	-Fernando? Or Chris?
 
 
