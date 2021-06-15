@@ -30,13 +30,13 @@ const sess = {
 
 // ROUTES
 // displays log in / sign-up page
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'view.html')));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'login.handlebars')));
 
 // displays home page for all recipes added
-app.get('/myrecipes', (req, res) => res.sendFile(path.join(__dirname, 'recipe.html')));
+app.get('/myrecipes', (req, res) => res.sendFile(path.join(__dirname, 'main.handlebars')));
 
 // displays page to add new recipes
-app.get('/add', (req, res) => res.sendFile(path.join(__dirname, 'add.html')));
+app.get('/add', (req, res) => res.sendFile(path.join(__dirname, 'new-recipe.handlebars')));
 
 // START SERVER
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
