@@ -5,6 +5,9 @@ const exphbs = require('express-handlebars');
 // Initializes Sequelize with session store
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const helpers = require('./utils/helpers');
+const sequelize = require ('./config/connection');
+
 // EXPRESS APP
 const app = express();
 const PORT = 3000;
