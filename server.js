@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const routes = require('./controllers');
 // Initializes Sequelize with session store
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -15,6 +16,9 @@ const PORT = process.env.PORT || 3000;
 // EXPRESS APP - DATA PARSING
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
 
 //SEQUELIZE
 
