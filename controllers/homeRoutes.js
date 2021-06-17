@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all recipe and JOIN with user data
     const recipeData = await Recipe.findAll({
       include: [
         {
