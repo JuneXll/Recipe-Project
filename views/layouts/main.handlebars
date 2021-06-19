@@ -5,16 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe Cookbook</title>
-  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <link rel="stylesheet" href="\public\css\styles.css">
 </head>
 
 <body>
   <header class="">
-    <h1>
+    <h1 class="center-align" id="pageTitle">
      My Recipe Cookbook
     </h1>
     {{#if logged_in}}
-    <nav>
+    <nav class="center-align ">
       <button class="btn" id="logout">Logout</button>
       <button class="btn" id="add-recipe">Add New Recipe</button>
     </nav>
