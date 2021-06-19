@@ -48,7 +48,10 @@ User.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
+    tableName: 'user'
   }
 );
+
+console.log(User===sequelize.models.User);
 
 module.exports = User;
