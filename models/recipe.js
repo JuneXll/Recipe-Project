@@ -41,7 +41,9 @@ Recipe.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'recipe',
+    tableName: 'recipe'
   }
 );
 
+console.log(Recipe === sequelize.models.Recipe);
 module.exports = Recipe;
