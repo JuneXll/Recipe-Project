@@ -1,4 +1,12 @@
+<section class="search">
+    <div class="search-bar">
+        <label for="search-input">Look for a New Recipe:</label>
+        <input class="form-input" type="text" id="search-input" />
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</section>
+
 <!-- For each recipe, the recipe-details partial is used to render the recipe preview -->
 {{#each recipes as |recipe|}}
-{{> recipe-details}}
+{{> preview-recipe}}
 {{/each}}

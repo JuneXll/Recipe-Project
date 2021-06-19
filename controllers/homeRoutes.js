@@ -63,5 +63,3 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
-
-//random gibberish for a pull request to main branch
