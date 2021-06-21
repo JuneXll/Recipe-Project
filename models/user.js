@@ -47,8 +47,11 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'User',
+    tableName: 'user'
   }
 );
+
+console.log(User===sequelize.models.User);
 
 module.exports = User;
