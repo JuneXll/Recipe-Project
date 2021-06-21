@@ -23,7 +23,7 @@ router.get('/recipe/:id', async (req, res) => {
 
     const recipe = recipeData.get({ plain: true });
 
-    res.render('project', {
+    res.render('preview-recipe', {
       ...recipe,
       logged_in: req.session.logged_in
     });
@@ -58,8 +58,16 @@ router.get('/login', (req, res) => {
     res.redirect('/homepage');
     return;
   }
+  //otherwise it will send back to
+  res.render('login');
+});
 
-  res.render('homepage');
+router.get('/homepage', async (req, res) => {
+  try {
+   res.render('homepage');
+ } catch (err) {
+   res.status(500).json(err);
+ }
 });
 
 module.exports = router;
