@@ -6,23 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe Cookbook</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link rel="stylesheet" href="\public\css\styles.css">
 </head>
 
-<body>
-  <header class="">
-    <h1 class="center-align" id="pageTitle">
-     My Recipe Cookbook
-    </h1>
-    {{#if logged_in}}
-    <nav class="center-align ">
-      <button class="btn" id="logout">Logout</button>
-      <button class="btn" id="add-recipe">Add New Recipe</button>
+<body class="blue-grey lighten-5">
+  <header class="header">
+    <nav class="nav-wrapper deep-purple darken-3">
+      <a href="#" class="brand-logo">My Recipe Cookbook<i class="large material-icons">local_dining</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn" id="logout">Logout</a></li>
+        <li><a class="waves-effect waves-light btn" id="add-recipe">Add New Recipe</a></li>
+      </ul>
     </nav>
-    {{/if}}
   </header>
-  <main class="recipes">
+
+  <main class="recipes blue-grey lighten-5">
     {{{ body }}}
   </main>
   <footer>
