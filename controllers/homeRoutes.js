@@ -58,8 +58,16 @@ router.get('/login', (req, res) => {
     res.redirect('/homepage');
     return;
   }
+  //otherwise it will send back to
+  res.render('login');
+});
 
-  res.render('homepage');
+router.get('/homepage', async (req, res) => {
+  try {
+   res.render('homepage');
+ } catch (err) {
+   res.status(500).json(err);
+ }
 });
 
 module.exports = router;
