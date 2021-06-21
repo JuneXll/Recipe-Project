@@ -23,7 +23,7 @@ router.get('/recipe/:id', async (req, res) => {
 
     const recipe = recipeData.get({ plain: true });
 
-    res.render('project', {
+    res.render('preview-recipe', {
       ...recipe,
       logged_in: req.session.logged_in
     });
