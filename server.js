@@ -35,8 +35,8 @@ const sess = {
     }),
 };
 
-
 app.use(session(sess));
+
 
 //For use with helpers
 const hbs = exphbs.create({ helpers });
@@ -59,7 +59,11 @@ app.get('/myrecipes', (req, res) => res.sendFile(path.join(__dirname, 'main.hand
 app.get('/add', (req, res) => res.sendFile(path.join(__dirname, 'new-recipe.handlebars')));
 
 // START SERVER
-app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`App listening on port ${PORT}!`);
+  });
+});
 
 
 
