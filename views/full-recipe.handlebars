@@ -1,23 +1,24 @@
 {{!-- Page that will be rendered when preview card is selected --}}
-<section class="container">
-  <div class="container">
-    <h1 class="recipe-name">{{recipe.name}}</h1>
-    <h3 class="recipe-description">{{recipe.description}}</h3>
-  </div>
-  {{!-- We can figure this out later as an extra step
-  <div class="container">
-   <img src="/images/{{filename}}" alt="{{description}}">
-  </div> --}}
-  <div class="container">
-    <h3 class="ingredients">
-      {{recipe.ingredients}}
-    </h3>
-    <h3 class="instructions">
-      {{recipe.instructions}}
-    </h3>
-  </div>
-  <div class="container">
-    {{!-- NUTRITIONAL PICTURE WILL GO HERE --}}
-  </div>
-  <button class="btn" type="submit">Return to homepage</button>
-</section>
+<div class="container">
+  <div class="row">
+      <section class="card grey lighten-5 col s12 m6 l6 offset-m3 offset-l3 center">
+        <div class="">
+          <h1 class="recipe-name card-title">{{recipe.name}}</h1>
+          <h3 class="recipe-description card-content">{{recipe.description}}</h3>
+        </div>
+        
+        <div class="">
+          <img src="/images/{{filename}}" alt="{{description}}">
+        </div> --}}
+        <div class="">
+          <h3 class="ingredients card-content">{{recipe.ingredients}}
+          </h3>
+          <h3 class="instructions card-content">{{recipe.instructions}}
+          </h3>
+        </div>
+        <div class="">
+        </div>
+        <button class="btn" type="submit">Return to homepage</button>
+      </section>
+  </div>     
+</div>
