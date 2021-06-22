@@ -21,7 +21,7 @@ router.get('/recipe/:id', async (req, res) => {
       ],
     });
 
-    const recipe = recipeData.get({ plain: true });
+    const recipe = recipeData.map((recipe)=> recipeData.get({ plain: true }));
 
     res.render('preview-recipe', {
       ...recipe,
