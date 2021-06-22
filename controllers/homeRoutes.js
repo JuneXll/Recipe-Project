@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Recipe, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/login', async (req, res) => {
    try {
     res.render('login');
   } catch (err) {
@@ -10,13 +10,32 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/homepage', async (req, res) => {
+  const recipeData = await Recipe.findAll({
+        model: Recipe,
+        attributes: ['id', 'recipe_name','description'],
+  }).catch((err) => { 
+      res.json(err);
+    });
+
+  const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+  console.log(recipes);
+      
+  res.render('homepage', { recipes });
+  });
+
 router.get('/recipe/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
       include: [
         {
           model: Recipe,
-          attributes: ['name'],
+          attributes: [
+            'id',
+            'recipe_name',
+            'description',
+            'steps'
+          ],
         },
       ],
     });
@@ -62,12 +81,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/homepage', async (req, res) => {
-  try {
-   res.render('homepage');
- } catch (err) {
-   res.status(500).json(err);
- }
-});
+// router.get('/homepage', async (req, res) => {
+//   try {
+//    res.render('homepage');
+//  } catch (err) {
+//    res.status(500).json(err);
+//  }
+// });
 
 module.exports = router;
