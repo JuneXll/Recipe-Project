@@ -2,14 +2,18 @@
  
   <section class="row">
     <div class="col s12 m6 l6 offset-m3 offset-l3 card center">
-      <h1 class="recipe-name card-title">{{recipe_name}}</h1>
-      <h3 class="recipe-description card-content">{{description}}</h3>
+      <h1 class="recipe-name card-content"><span class="teal-text text-lighten-2">{{recipe_name}}</span></h1>
+      <h4 class="recipe-description card-content">{{description}}</h4>
     </div>
-    <div class="col s12 m6 l6 offset-m3 offset-l3 card right-align">
-      <h3 class="ingredients card-content">{{ingredients}}
+    <div class="col s12 m6 l6 offset-m3 offset-l3 card left-align">
+      <h3 class="ingredients card-content"><span class="teal-text text-lighten-2">Ingredients:</span>
       </h3>
-      <h3 class="instructions card-content">{{steps}}
+      <h5 class="ingredients card-content">{{ingredients}}
+      </h5>
+      <h3 class="instructions card-content"><span class="teal-text text-lighten-2">Instructions:</span>
       </h3>
+      <h5 class="instructions card-content">{{steps}}
+      </h5>
     </div>
     <div class="col s12 m6 l6 offset-m3 offset-l3 center">
       <button class="btn" onclick="window.location.href='http://localhost:3000/homepage';" type="submit">Return to homepage</button>
