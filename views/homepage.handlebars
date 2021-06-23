@@ -4,7 +4,8 @@
             <div class="search-bar">
                 <label for="search-input">Look for a New Recipe:</label>
                 <input class="form-input" type="text" id="search-input" placeholder="Search" />
-                <button class="btn" type="submit">Submit</button>
+                <button class="btn" type="submit" id="search-submit">Submit</button>
+                <button class="btn" type="submit" id="clear">Clear Search</button>
             </div>
         </section>
     </div>
@@ -16,3 +17,11 @@
 {{> preview-recipe}}
 {{/each}}
 </div>
+
+<section class="container">
+    <div id="recipes-retrieved">
+            
+    </div>
+</section>
+
+<script src="/public/js/homepage.js"></script>
