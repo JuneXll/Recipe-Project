@@ -2,32 +2,15 @@
 <div class="container">
   <div class="row">
       <section class="card grey lighten-5 col s12 m6 l6 offset-m3 offset-l3 center">
-          <h1 class="recipe-title card-title">Add Recipe Link Below:</h1>
-          <input class="form-input" type="text" id="recipe-link" placeholder="Add link here"/>
-          <button class="btn" type="submit">Populate my Recipe!</button>
-      {{#if submit}}
-        <div class="">
-          <h1 class="recipe-name card-title">{{recipe.name}}</h1>
-          <h3 class="recipe-description card-content">{{recipe.description}}</h3>
-        </div>
-        {{!-- We can figure this out later as an extra step
-        <div class="">
-          <img src="/images/{{filename}}" alt="{{description}}">
-        </div> --}}
-        <div class="">
-          <h3 class="ingredients card-content">
-            {{recipe.ingredients}}
-          </h3>
-          <h3 class="instructions card-content">
-            {{recipe.instructions}}
-          </h3>
-        </div>
-        <div class="">
-          {{!-- NUTRITIONAL PICTURE WILL GO HERE --}}
-        </div>
-        <button class="btn" type="submit">Save to my Recipes</button>
-        <button class="btn" type="submit">Return to homepage</button>
-        {{/if}}
+        <h1 class="recipe-title card-title">Add Recipe Link Below:</h1>
+        <input class="form-input" type="text" id="recipe-link" placeholder="Add link here"/>
+        <button id="populate-btn" class="btn" type="submit">Populate my Recipe!</button>
+        <section id="new-recipe-container">
+     
+        </section>
       </section>
   </div>
 </div>
+
+
+<script src="/public/js/new-recipe.js"></script>
