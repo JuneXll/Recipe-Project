@@ -24,8 +24,8 @@ let getRequest = () => {
     html.map((data) => {
         //console.log(data.recipe);
         recipeContainer.innerHTML += `
-    <div class="row">
-    <div class="col s12 m7">
+   
+    <div class="col s12 m4">
       <div class="card medium">
         <div class="card-image">
           <img src=${data.recipe.image}>
@@ -41,7 +41,7 @@ let getRequest = () => {
         </div>
       </div>
     </div>
-  </div>
+  
     `;
     })    
 })
