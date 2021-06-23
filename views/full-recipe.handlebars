@@ -1,19 +1,16 @@
 {{!-- Page that will be rendered when preview card is selected --}}
+
 <div class="container">
   <div class="row">
       <section class="card grey lighten-5 col s12 m6 l6 offset-m3 offset-l3 center">
         <div class="">
-          <h1 class="recipe-name card-title">{{recipe.name}}</h1>
-          <h3 class="recipe-description card-content">{{recipe.description}}</h3>
+          <h1 class="recipe-name card-title">{{recipe_name}}</h1>
+          <h3 class="recipe-description card-content">{{description}}</h3>
         </div>
-        
         <div class="">
-          <img src="/images/{{filename}}" alt="{{description}}">
-        </div> --}}
-        <div class="">
-          <h3 class="ingredients card-content">{{recipe.ingredients}}
+          <h3 class="ingredients card-content">{{ingredients}}
           </h3>
-          <h3 class="instructions card-content">{{recipe.instructions}}
+          <h3 class="instructions card-content">{{steps}}
           </h3>
         </div>
         <div class="">
