@@ -26,18 +26,17 @@ let getRequest = () => {
         recipeContainer.innerHTML += `
     <div class="row">
     <div class="col s12 m7">
-      <div class="card small">
+      <div class="card medium">
         <div class="card-image">
           <img src=${data.recipe.image}>
-          <span class="card-title">${data.recipe.label}</span>
+          <span class="card-title blue-grey darken-1">${data.recipe.label}</span>
         </div>
-        <div class="card-content">
+        <div class="card-content grey lighten-3">
           <p>Source: ${data.recipe.source} <br>
              Calories: ${data.recipe.calories.toFixed(0)} <br>
-             Ingredients: ${data.recipe.ingredientLines}
           </p>
         </div>
-        <div class="card-action">
+        <div class="card-action grey lighten-3">
           <a target="_blank" href="${data.recipe.url}">How To Make</a>
         </div>
       </div>

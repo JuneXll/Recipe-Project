@@ -81,12 +81,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// router.get('/homepage', async (req, res) => {
-//   try {
-//    res.render('homepage');
-//  } catch (err) {
-//    res.status(500).json(err);
-//  }
-// });
+router.get('/newrecipe', async (req, res) => {
+  try {
+   res.render('new-recipe');
+ } catch (err) {
+   res.status(500).json(err);
+ }
+});
 
 module.exports = router;
