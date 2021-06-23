@@ -1,11 +1,12 @@
 {{!-- This will be rendered on the recipe page once a user logs on --}}
-<section class="card">
-  <a href="/recipe/{{id}}">
-    <header>{{recipe.name}}</header>
-    <h3 class="recipe-description">
-        {{recipe.description}}
-    </h3>
-  </a>
-  {{!-- We can figure out later how to remove a recipe from homepage --}}
-  {{!-- <button class="btn delete-btn" type="submit">Delete</button> --}}
-</section>
+
+    <div class="col s12 m4">
+      <a href="/recipe/{{id}}">
+        <div class="card blue-grey">
+          <div class="card-content white-text">
+            <span class="card-title">{{recipe_name}}</span>
+            <p>{{description}}</p>
+          </div>
+        </div>
+      </a>
+    </div>
