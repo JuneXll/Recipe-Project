@@ -27,23 +27,23 @@ router.get('/homepage', async (req, res) => {
 router.get('/recipe/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
-      include: [
-        {
           model: Recipe,
           attributes: [
             'id',
             'recipe_name',
+            'ingredients',
             'description',
             'steps'
           ],
-        },
-      ],
+    }).catch((err) => { 
+      res.json(err);
     });
 
-    const recipe = recipeData.map((recipe)=> recipeData.get({ plain: true }));
+    const recipes = recipeData.get({ plain: true });
+    console.log(recipes);
 
-    res.render('preview-recipe', {
-      ...recipe,
+    res.render('full-recipe', {
+      ...recipes,
       logged_in: req.session.logged_in
     });
   } catch (err) {
