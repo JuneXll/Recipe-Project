@@ -1,6 +1,7 @@
 /*--------------------------DOM Elements------------------------------------*/
 const searchSubmitButton = document.querySelector('#search-submit');
 const userReq = document.querySelector('#search-input').value;
+const clearBtn = document.querySelector('#clear');
 
 /*--------------------------Search Function------------------------------------*/
 let getRequest = function() {
@@ -31,7 +32,7 @@ let getRequest = function() {
         </div>
         <div class="card-content">
           <p>Source: ${data.recipe.source} <br>
-             Calories: ${data.recipe.calories} <br>
+             Calories: ${data.recipe.calories.toFixed(0)} <br>
              Ingredients: ${data.recipe.ingredientLines}
           </p>
         </div>
@@ -52,4 +53,11 @@ let getRequest = function() {
 searchSubmitButton.addEventListener("click", (e) => {
     e.preventDefault();
     getRequest();
+});
+
+clearBtn.addEventListener("click", () => {
+    const recipeContainer = document.querySelector('#recipes-retrieved').innerHTML;
+    while (recipeContainer.firstChild) {
+        recipeContainer.firstChild.remove();
+    }
 });
