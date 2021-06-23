@@ -60,7 +60,12 @@ Authentication(express-session and cookies)
 Protect API keys and sensitive information(.env)  
 	-Fernando? Or Chris?
 
+CSS + <>
+
 ## Nutrition API Key
 f0511b25	
+
+# Share to social media API
+# Internal messaging between users to share recipes
 
 
