@@ -17,6 +17,7 @@ let addNewRecipe = () => {
             "x-rapidapi-host": "mycookbook-io1.p.rapidapi.com"
         },
         "body": "&quot;" + userReq + "&quot;"
+        // "body": userReq
     })
     .then((res) => {
         console.log(res);
