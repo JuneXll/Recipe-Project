@@ -45,6 +45,7 @@ const signupFormHandler = async (event) => {
     });
 
     if(!response.ok){
+      console.log(response);
       document.location.replace('/login');
     } else {
       alert(response.statusText);
