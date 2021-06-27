@@ -1,3 +1,4 @@
+// Login form handler
 const loginFormHandler = async (event) => {
     // Stop the browser from submitting the form so we can do so with JavaScript
     event.preventDefault();
@@ -27,3 +28,28 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
+
+// Sign up for handler
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector("#name-newAccount");
+  const email = document.querySelector("#email-newAccount");
+  const password = document.querySelector("#password-newAccount")
+
+  if(name && email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({name, email, password}),
+      headers: { 'Content-Type': 'application/json'},
+    });
+
+    if(!response.ok){
+      document.location.replace('/login');
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+document.querySelector(".newAccount-form").addEventListener('submit',signupFormHandler);
