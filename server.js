@@ -46,19 +46,6 @@ const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// DATA
-// need API data here
-
-// ROUTES
-// displays log in / sign-up page
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'login.handlebars')));
-
-// displays home page for all recipes added
-app.get('/myrecipes', (req, res) => res.sendFile(path.join(__dirname, 'main.handlebars')));
-
-// displays page to add new recipes
-app.get('/add', (req, res) => res.sendFile(path.join(__dirname, 'new-recipe.handlebars')));
-
 // START SERVER
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Recipe, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/login', async (req, res) => {
+router.get('/', async (req, res) => {
    try {
     res.render('login');
   } catch (err) {
