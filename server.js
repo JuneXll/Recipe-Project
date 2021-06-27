@@ -1,25 +1,22 @@
-const express = require('express');
 const path = require('path');
+const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const helpers = require('./utils/helpers');
 
+const sequelize = require ('./config/connection');
 // Initializes Sequelize with session store
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-const helpers = require('./utils/helpers');
-const sequelize = require ('./config/connection');
 
 // EXPRESS APP
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// EXPRESS APP - DATA PARSING
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+//For use with helpers
+const hbs = exphbs.create({ helpers });
 
 //SEQUELIZE
-
 // Sets up session and connect to our Sequelize db
 const sess = {
   secret: 'Recipe secret',
@@ -34,30 +31,17 @@ const sess = {
 };
 
 app.use(session(sess));
-app.use('/public', express.static(path.join(__dirname, 'public')));
-
-app.use(routes);
-
-
-//For use with helpers
-const hbs = exphbs.create({ helpers });
 
 //standard setup to use handlebars express
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// DATA
-// need API data here
+// EXPRESS APP - DATA PARSING
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
-// ROUTES
-// displays log in / sign-up page
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'login.handlebars')));
-
-// displays home page for all recipes added
-app.get('/myrecipes', (req, res) => res.sendFile(path.join(__dirname, 'main.handlebars')));
-
-// displays page to add new recipes
-app.get('/add', (req, res) => res.sendFile(path.join(__dirname, 'new-recipe.handlebars')));
+app.use(routes);
 
 // START SERVER
 sequelize.sync({ force: false }).then(() => {

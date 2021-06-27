@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Recipe, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/login', async (req, res) => {
+router.get('/', async (req, res) => {
    try {
     res.render('login');
   } catch (err) {
@@ -11,10 +11,12 @@ router.get('/login', async (req, res) => {
 });
 
 router.get('/homepage', async (req, res) => {
-  const recipeData = await Recipe.findAll({
-        model: Recipe,
-        attributes: ['id', 'recipe_name','description'],
-  }).catch((err) => { 
+  const recipeData = await Recipe.findAll(
+    {
+      model: Recipe,
+      attributes: ['id', 'recipe_name','description'],
+  })
+    .catch((err) => { 
       res.json(err);
     });
 
