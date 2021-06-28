@@ -14,7 +14,7 @@ router.get('/homepage', async (req, res) => {
   const recipeData = await Recipe.findAll({
         model: Recipe,
         attributes: ['id', 'recipe_name','description'],
-  }).catch((err) => { 
+      }).catch((err) => { 
       res.json(err);
     });
 
@@ -71,7 +71,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/homepage');
