@@ -71,15 +71,6 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/homepage');
-    return;
-  }
-  //otherwise it will send back to
-  res.render('login');
-});
 
 router.get('/newrecipe', async (req, res) => {
   try {
@@ -87,6 +78,16 @@ router.get('/newrecipe', async (req, res) => {
  } catch (err) {
    res.status(500).json(err);
  }
+});
+
+router.get('*', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/homepage');
+    return;
+  }
+  //otherwise it will send back to
+  res.render('login');
 });
 
 module.exports = router;
